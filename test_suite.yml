@@ -1,0 +1,25 @@
+modules:
+  local:
+    sequential: true
+
+execution:
+  - scenario: GooglePage
+  - scenario: YahooPage
+  - scenario: HotmailPage
+
+scenarios:
+  GooglePage:
+    script: ./tests/jmeter/google_page.jmx
+
+  YahooPage:
+    script: ./tests/jmeter/yahoo_page.jmx
+
+  HotmailPage:
+    script: ./tests/jmeter/hotmail_page.jmx
+
+reporting:
+  - module: final-stats
+    summary: true
+    dump-xml: stats.xml
+#    dump-csv: stats.csv
+
